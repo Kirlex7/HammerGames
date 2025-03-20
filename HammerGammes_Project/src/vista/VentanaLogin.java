@@ -164,7 +164,3 @@ public class VentanaLogin extends JFrame {
 
 	}
 }
-
-
-//prueba de rama prueba
-// prueba merge

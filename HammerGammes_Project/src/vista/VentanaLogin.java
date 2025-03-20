@@ -21,6 +21,7 @@ import java.awt.Font;
 import javax.swing.JSeparator;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Toolkit;
 
 public class VentanaLogin extends JFrame {
 
@@ -37,6 +38,7 @@ public class VentanaLogin extends JFrame {
 			public void run() {
 				try {
 					VentanaLogin frame = new VentanaLogin();
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,6 +51,7 @@ public class VentanaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaLogin() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaLogin.class.getResource("/resources/logo.png")));
 		setTitle("HammerGames - Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 555, 331);
@@ -101,22 +104,8 @@ public class VentanaLogin extends JFrame {
 		contentPane.add(lblClavetxt);
 
 		txtUsuario = new JTextField();
-		txtUsuario.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				txtUsuario.setText("");
-				txtUsuario.setForeground(Color.BLACK);
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				txtUsuario.setForeground(Color.LIGHT_GRAY);
-				txtUsuario.setBackground(Color.WHITE);
-				txtUsuario.setText("Ingrese su usuario");
-			}
-		});
-		txtUsuario.setForeground(Color.LIGHT_GRAY);
+		txtUsuario.setForeground(new Color(0, 0, 0));
 		txtUsuario.setBackground(Color.WHITE);
-		txtUsuario.setText("Ingrese su usuario");
 		txtUsuario.setFont(new Font("Roboto", Font.PLAIN, 11));
 		txtUsuario.setBounds(81, 113, 102, 20);
 		txtUsuario.setBorder(null);

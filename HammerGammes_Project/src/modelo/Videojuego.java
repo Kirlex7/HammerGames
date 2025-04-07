@@ -1,10 +1,13 @@
 package modelo;
 
 public class Videojuego {
+	public enum Genero{
+		PLATAFORMA,INDIE,FPS,RPG,MMO,SOULSKIKE,SANDBOX,RTS
+	}
     private int idVideojuego;
     private String nombre;
     private String fechaLanzamiento;
-    private String genero;  // Esto puede ser un Enum si deseas
+    private Genero genero;  // Esto puede ser un Enum si deseas
     private String plataforma;
     private double precio;
     private double calificacion;
@@ -12,7 +15,7 @@ public class Videojuego {
     private int stock;
 
     // Constructor
-    public Videojuego(int idVideojuego, String nombre, String fechaLanzamiento, String genero, String plataforma, 
+    public Videojuego(int idVideojuego, String nombre, String fechaLanzamiento, Genero genero, String plataforma, 
                       double precio, double calificacion, boolean multijugador, int stock) {
         this.idVideojuego = idVideojuego;
         this.nombre = nombre;
@@ -50,11 +53,11 @@ public class Videojuego {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
-    public String getGenero() {
+    public Genero getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(Genero genero) {
         this.genero = genero;
     }
 

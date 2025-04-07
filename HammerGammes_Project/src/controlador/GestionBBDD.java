@@ -26,4 +26,22 @@ public class GestionBBDD {
 	        }
 	        return false;
 	    }
+	    
+	    public static void insertarVideojuego(String nombreV, int fechaV, String generoV, String plataformaV, int precioV, int calificacionV, boolean multijugadorV, int stockV) {
+	    	try {
+				Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/HammerGames_db", "root", "");
+				Statement consulta = conexion.createStatement();
+				// Mostramos por consola el insert a realizar
+				// Realizamos el insert sobre la base de datos
+				consulta.executeUpdate("insert into videojuegos (Nombre, Fecha_Lanzamiento, Genero, Plataforma, Precio, Calificacion, Multijugador, Stock) " + "values ('"
+						+ nombreV + "'," + fechaV + ",'" + generoV + "','" + plataformaV + "'," + precioV + "," + calificacionV + "," + multijugadorV + "," + stockV + 
+						"); ");
+
+				conexion.close();
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
 }

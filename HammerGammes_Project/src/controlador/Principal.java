@@ -8,5 +8,4 @@ public class Principal {
 		VentanaLogin login = new VentanaLogin();
 		login.ejecutador(args);
 	}
-
 }

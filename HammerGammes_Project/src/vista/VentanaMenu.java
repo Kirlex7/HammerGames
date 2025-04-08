@@ -14,6 +14,8 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaMenu extends JFrame {
 
@@ -33,46 +35,62 @@ public class VentanaMenu extends JFrame {
 		menuBar.add(mnHammerGames);
 		
 		JMenuItem mntmInsertarVideojuego = new JMenuItem("Insertar");
-		mntmInsertarVideojuego.setIcon(new ImageIcon(VentanaMenu.class.getResource("/resources/anadir (1) (1).png")));
+		mntmInsertarVideojuego.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InsertarUsuario iu = new InsertarUsuario();
+				nuevoPanel(iu);
+			}
+		});
+		mntmInsertarVideojuego.setIcon(null);
 		mnHammerGames.add(mntmInsertarVideojuego);
 		
 		JMenuItem mntmConsultar = new JMenuItem("Consultar");
-		mntmConsultar.setIcon(new ImageIcon(VentanaMenu.class.getResource("/resources/busqueda-de-lupa.png")));
+		mntmConsultar.setIcon(null);
 		mnHammerGames.add(mntmConsultar);
 		
 		JMenuItem mntmVenta = new JMenuItem("Venta");
-		mntmVenta.setIcon(new ImageIcon(VentanaMenu.class.getResource("/resources/carro.png")));
+		mntmVenta.setIcon(null);
 		mnHammerGames.add(mntmVenta);
 		
 		JMenuItem mntmAdministrar = new JMenuItem("Administrar");
-		mntmAdministrar.setIcon(new ImageIcon(VentanaMenu.class.getResource("/resources/administrador.png")));
+		mntmAdministrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InsertarEmpleado ie = new InsertarEmpleado();
+				nuevoPanel(contentPane);
+			}
+		});
+		mntmAdministrar.setIcon(null);
 		mnHammerGames.add(mntmAdministrar);
 		
 		JMenuItem mntmCerrarSesion = new JMenuItem("Cerrar Sesión");
-		mntmCerrarSesion.setIcon(new ImageIcon(VentanaMenu.class.getResource("/resources/cerrar-sesion.png")));
+		mntmCerrarSesion.setIcon(null);
 		mnHammerGames.add(mntmCerrarSesion);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblLogo = new JLabel("");
+		lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogo.setIcon(new ImageIcon(VentanaMenu.class.getResource("/resources/logo.png")));
-		lblLogo.setBounds(245, 94, 124, 158);
-		contentPane.add(lblLogo);
+		contentPane.add(lblLogo, "name_1897432051289900");
 		
 		JLabel lblBienvenida = new JLabel("New label");
 		lblBienvenida.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenida.setForeground(new Color(0, 0, 0));
 		lblBienvenida.setFont(new Font("Roboto", Font.BOLD, 20));
-		lblBienvenida.setBounds(245, 59, 135, 24);
 		lblBienvenida.setText("Bienvenid@");
-		contentPane.add(lblBienvenida);
+		contentPane.add(lblBienvenida, "name_1897432073403000");
 		
-		JLabel lblNewLabel = new JLabel("Hola sergio");
-		lblNewLabel.setBounds(99, 165, 87, 14);
-		contentPane.add(lblNewLabel);
+		
+	}
+	
+	public void nuevoPanel(JPanel panelActual) {
+		contentPane.removeAll();
+		contentPane.add(panelActual);
+		contentPane.repaint();
+		contentPane.revalidate();
 	}
 }

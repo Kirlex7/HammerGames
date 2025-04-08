@@ -54,12 +54,12 @@ public class InsertarEmpleado extends JPanel {
 		
 		JLabel lblIconoUsuario = new JLabel("");
 		lblIconoUsuario.setIcon(new ImageIcon(InsertarEmpleado.class.getResource("/resources/agregar-usuario (1).png")));
-		lblIconoUsuario.setBounds(54, 44, 56, 59);
+		lblIconoUsuario.setBounds(55, 62, 81, 84);
 		add(lblIconoUsuario);
 		
 		JLabel lblFondoAzul = new JLabel("");
 		lblFondoAzul.setBackground(new Color(0, 255, 255));
-		lblFondoAzul.setBounds(0, 0, 160, 300);
+		lblFondoAzul.setBounds(0, 0, 180, 674);
 		add(lblFondoAzul);
 		lblFondoAzul.setOpaque(true);
 		

@@ -41,19 +41,19 @@ public class InsertarUsuario extends JPanel {
 		
 		JLabel lblTitle = new JLabel("Insertar videojuego");
 		lblTitle.setFont(new Font("Roboto", Font.BOLD, 14));
-		lblTitle.setBounds(52, 135, 132, 14);
+		lblTitle.setBounds(52, 192, 187, 46);
 		add(lblTitle);
 		
 		JLabel lblIcono = new JLabel("");
 		lblIcono.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIcono.setIcon(new ImageIcon(InsertarUsuario.class.getResource("/resources/consola-de-juego (2).png")));
-		lblIcono.setBounds(59, 17, 110, 107);
+		lblIcono.setBounds(67, 74, 110, 107);
 		add(lblIcono);
 		
 		JLabel lblRecuadroBlanco = new JLabel("");
 		lblRecuadroBlanco.setIcon(null);
 		lblRecuadroBlanco.setBackground(new Color(0, 255, 255));
-		lblRecuadroBlanco.setBounds(0, 0, 239, 386);
+		lblRecuadroBlanco.setBounds(0, 0, 239, 652);
 		lblRecuadroBlanco.setOpaque(true);
 		add(lblRecuadroBlanco);
 		
@@ -152,7 +152,7 @@ public class InsertarUsuario extends JPanel {
 		btnInsertar.setBorder(null);
 		btnInsertar.setBackground(Color.CYAN);
 		btnInsertar.setForeground(Color.BLACK);
-		btnInsertar.setBounds(551, 287, 89, 47);
+		btnInsertar.setBounds(387, 406, 89, 47);
 		add(btnInsertar);
 		
 	}

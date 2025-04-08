@@ -53,6 +53,12 @@ public class VentanaMenu extends JFrame {
 		mnHammerGames.add(mntmVenta);
 		
 		JMenuItem mntmAdministrar = new JMenuItem("Administrar");
+		mntmAdministrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InsertarEmpleado ie = new InsertarEmpleado();
+				nuevoPanel(ie);
+			}
+		});
 		mntmAdministrar.setIcon(null);
 		mnHammerGames.add(mntmAdministrar);
 		

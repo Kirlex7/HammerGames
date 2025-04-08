@@ -26,6 +26,7 @@ public class VentanaMenu extends JFrame {
 		setTitle("Tienda de Videojuegos HammerGammes\r\n");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaMenu.class.getResource("/resources/logo.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setBounds(100, 100, 642, 383);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -56,7 +57,7 @@ public class VentanaMenu extends JFrame {
 		mntmAdministrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				InsertarEmpleado ie = new InsertarEmpleado();
-				nuevoPanel(contentPane);
+				nuevoPanel(ie);
 			}
 		});
 		mntmAdministrar.setIcon(null);
